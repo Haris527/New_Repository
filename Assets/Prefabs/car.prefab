@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1178603285645688395
 Transform:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 4287609665930100292}
   - component: {fileID: 5023929002675906668}
   - component: {fileID: 7154960957170023527}
-  - component: {fileID: 8680566756060910291}
+  - component: {fileID: 362467114143780840}
   m_Layer: 0
   m_Name: car
   m_TagString: Player
@@ -275,9 +275,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5880203268595510215}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0040866667, y: -0.24726927, z: -0.01601164, w: 0.96880597}
+  m_LocalRotation: {x: 0.004087319, y: -0.2472696, z: -0.016014175, w: 0.9688058}
   m_LocalPosition: {x: -692.11, y: 26.25, z: -423.94}
-  m_LocalScale: {x: 3.1878002, y: 1, z: 5.051788}
+  m_LocalScale: {x: 3.1878002, y: 1, z: 5.0517874}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6437606183767485572}
@@ -332,7 +332,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8680566756060910291
+--- !u!114 &362467114143780840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,8 +341,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5880203268595510215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1129d8a12c3d3c44b93423d31d9cf777, type: 3}
+  m_Script: {fileID: 11500000, guid: 3eebc31dd37ee094e9d7e9da2b25d786, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CarController
-  speed: 50
-  turnSpeed: 120
+  m_EditorClassIdentifier: Assembly-CSharp::AdvancedCarController
+  acceleration: 15
+  maxSpeed: 250
+  brakeForce: 30
+  steeringSpeed: 100
+  currentSpeed: 0
+  speedNeedle: {fileID: 0}
+  gearText: {fileID: 0}
+  speedValueText: {fileID: 0}
+  startRotation: 135
+  endRotation: -135
