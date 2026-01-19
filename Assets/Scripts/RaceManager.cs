@@ -1,34 +1,64 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class RaceManager : MonoBehaviour
 {
     public static RaceManager instance;
 
-    public GameObject winText;
-    public GameObject loseText;
+    // Reference the whole screens, not just TMP_Text
+    public GameObject winScreen;
+    public GameObject loseScreen;
 
     void Awake()
     {
-        instance = this;
-        winText.SetActive(false);
-        loseText.SetActive(false);
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        // Make sure the screens are off at start
+        if (winScreen != null)
+            winScreen.SetActive(false);
+        if (loseScreen != null)
+            loseScreen.SetActive(false);
+    }
+
+    void Update()
+    {
+        // For testing
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            PlayerWon();
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            AIWon();
+        }
     }
 
     public void PlayerWon()
     {
-        winText.SetActive(true);
+        Debug.Log("PLAYER WON");
+        if (winScreen != null)
+            winScreen.SetActive(true);
+
         EndRace();
     }
 
     public void AIWon()
     {
-        loseText.SetActive(true);
+        Debug.Log("AI WON");
+        if (loseScreen != null)
+            loseScreen.SetActive(true);
+
         EndRace();
     }
 
     void EndRace()
     {
-        Time.timeScale = 0f; // pause game
+        // Stop the game
+        Time.timeScale = 0f;
     }
 }
