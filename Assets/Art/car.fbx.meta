@@ -1,0 +1,450 @@
+fileFormatVersion: 2
+guid: 1846e70810d22b14f9e3a34f6d77e131
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F1_front_plastic
+    second: {fileID: 2100000, guid: 631757ef2e3c88d4791da887c4c0d73b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F1_nip_logo
+    second: {fileID: 2100000, guid: f3e74092e9311144abaae121ca4cd4d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F1_red_F
+    second: {fileID: 2100000, guid: 4ee27458e8a69634ca64070ace7eb5f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F1_red_R
+    second: {fileID: 2100000, guid: 0a8f3a47a3eacb947b00b75c1168fe48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F1_side
+    second: {fileID: 2100000, guid: f3301a28624e2a843bbda5bed969198c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: McLAREN_RED_LINE
+    second: {fileID: 2100000, guid: 79f4f34c6e347344180e983d2e66ad74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: McLAREN_sidelogo
+    second: {fileID: 2100000, guid: 6062c856685ba0043a4d0243425c992b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: McLAREN_sidelogo_FBUMPER
+    second: {fileID: 2100000, guid: 65ea9dba4d54d3f42a103ce27e77a2be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: McLaren_logo
+    second: {fileID: 2100000, guid: 56f36920ba086154db344faf91292b9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: McLaren_supportlogo
+    second: {fileID: 2100000, guid: 22ff2c138b495bc469ba178d5add560a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black_aluminium
+    second: {fileID: 2100000, guid: 537a32234180a6946aa2660483d00a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black_chrome
+    second: {fileID: 2100000, guid: 2f4814201c9b61b44b458c4d1d9f8173, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black_chrome2
+    second: {fileID: 2100000, guid: 891872b8bfd331144a5bf77fae9fd4d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black_plastic
+    second: {fileID: 2100000, guid: 20b03b86c69ea2c44a370b833264d4e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottom
+    second: {fileID: 2100000, guid: 910a5ecfd401ad143b02979518a7da27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brakedisk
+    second: {fileID: 2100000, guid: 5eb9215856e90d6479e6c00344f9757d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brakelight
+    second: {fileID: 2100000, guid: f3cc352a38d4686499e74a7021d64348, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bronze
+    second: {fileID: 2100000, guid: dbba60ab9fa18834e880cacb25ad1e73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome
+    second: {fileID: 2100000, guid: 049c5dc206bfbc744884ce10f26fc8be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome2
+    second: {fileID: 2100000, guid: 83df8f8d5c4106e4881e9546fe6d71e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door_stitch
+    second: {fileID: 2100000, guid: 12c37650df75d5a41b477af07f72e231, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engine
+    second: {fileID: 2100000, guid: afcd3a822823551478afb0822ca15ebe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exhaust
+    second: {fileID: 2100000, guid: ad1cd15f8dd1a654a8f9979ae464e3c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exhaust_gold
+    second: {fileID: 2100000, guid: bc65f7121195c7d47846271379c2b2bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exhaust_hole
+    second: {fileID: 2100000, guid: cce680e65b02c574a8a648d84d6e979a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exhaust_metal_circles
+    second: {fileID: 2100000, guid: d815be13abea9f9489f311dad61a199c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: front_turn_signal
+    second: {fileID: 2100000, guid: e27289a79ae074342b256f7656aa4911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fuel_clap
+    second: {fileID: 2100000, guid: bad65e804b157e947b24a714c483a50e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill1
+    second: {fileID: 2100000, guid: 402deed715e35ac41b44d68adcc1045f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill2
+    second: {fileID: 2100000, guid: 2e5a62a9c55b3004280e71b4add57780, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill_3
+    second: {fileID: 2100000, guid: 6d23141559971794192539d2a989633b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill_f
+    second: {fileID: 2100000, guid: 9b475cd2880822146b0b24b19b96d49f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill_side
+    second: {fileID: 2100000, guid: 800f34dfee8572847a0b0b649fa1c4db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: headlight_1
+    second: {fileID: 2100000, guid: 08a4035039da21a4d8baaab4ec005db6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: headlight_2
+    second: {fileID: 2100000, guid: 777b26ceac387304382d81d0d24e02f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: headlightglass
+    second: {fileID: 2100000, guid: 3c5e15ee718321846a46d769030e25ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interior
+    second: {fileID: 2100000, guid: 02983e60192095649b8d563e62f68986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirrors
+    second: {fileID: 2100000, guid: 207e9fa67d9fb8b468d4b7a7126af1f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mt
+    second: {fileID: 2100000, guid: 71c35d99c03af3c4da876d6595e992ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pl
+    second: {fileID: 2100000, guid: 8608b759c8a13ea44a84c89b90f53693, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plate_F
+    second: {fileID: 2100000, guid: ba6a28a6a54f2744899eba08d4e81a3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plate_R
+    second: {fileID: 2100000, guid: c98bfa17f9d122444a34aa0c09a47c53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rear_lamp
+    second: {fileID: 2100000, guid: 340610372da433748a0fee9041739a94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rear_turn_signal
+    second: {fileID: 2100000, guid: 123b2e1c795992d4c91e996e6a131305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rim
+    second: {fileID: 2100000, guid: a1a01f7a790a3bc4caba21affa215d56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rimbolt
+    second: {fileID: 2100000, guid: c24a9d80e1fff9343bd86bc30d865244, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rimlogo
+    second: {fileID: 2100000, guid: c26c447498912d8469960dd6a14899ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: side_turn_signal
+    second: {fileID: 2100000, guid: 2aec2ced861efc2438b0a680ea37dc3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: suport
+    second: {fileID: 2100000, guid: dbafb7f26cd4dc245b3f87a966a75650, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire
+    second: {fileID: 2100000, guid: e4af2462008e53641afcc8b517a3a8c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire_side
+    second: {fileID: 2100000, guid: 6cea53b12c93ee14898cf0e7c34b3c32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windo_F
+    second: {fileID: 2100000, guid: 75264b36a4b61dd41bf95411c090b520, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windo_R
+    second: {fileID: 2100000, guid: 44d14f40707058b4ca737e20345d71fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windo_S
+    second: {fileID: 2100000, guid: fd22904884f42b643a5a1ad6eea4d9fa, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: McLaren F1 side
+    second: {fileID: 2800000, guid: 106b91156aa90d34d80afa128fabd9d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: McLaren support logo
+    second: {fileID: 2800000, guid: 41f2952a636782449a8c0fccced3670b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bottom
+    second: {fileID: 2800000, guid: 62f65ad5292830b469d36324e4a8d495, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: engine
+    second: {fileID: 2800000, guid: 3d8feaac882cdbe4b91d9d0a2e9c8459, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: grill
+    second: {fileID: 2800000, guid: 799af7c137cab9a418cb9ac89739da67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: interior
+    second: {fileID: 2800000, guid: abfa80bfe1d68c34990edf155a0015f8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plate F
+    second: {fileID: 2800000, guid: 1a517641c9e16684b9af65f4ec12350b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plate R
+    second: {fileID: 2800000, guid: 334b87cd12d62a54e8aceeb88c1addca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: stitch
+    second: {fileID: 2800000, guid: c93acd9e1621cb64b9cdc58b59422927, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tex1
+    second: {fileID: 2800000, guid: b82236444ee75c742b7396e5cb7d17b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tex2
+    second: {fileID: 2800000, guid: 56b2140a1c2bd6049a556d5e24297697, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tex3
+    second: {fileID: 2800000, guid: 026a5da06deaae84e8d81a146cb79e5a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tire
+    second: {fileID: 2800000, guid: 4aaa6e908f8c2b847ad895737f3be7d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tire side
+    second: {fileID: 2800000, guid: 3347a5131d223bf4087c126a33f91659, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
