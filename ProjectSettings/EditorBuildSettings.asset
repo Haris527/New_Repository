@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/UI.unity
     guid: d9f00d29a8752af47a3e9b7f1b2678c7
   - enabled: 1
-    path: Assets/Scenes/Green.unity
+    path: Assets/Scenes/Hill.unity
     guid: 857e6435c338e894e9974ff711b00fa8
   - enabled: 1
     path: Assets/Scenes/Snow.unity
