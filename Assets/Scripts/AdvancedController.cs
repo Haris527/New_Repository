@@ -29,28 +29,39 @@ public class AdvancedCarController : MonoBehaviour
         float moveInput = Input.GetAxis("Vertical");
         float turnInput = Input.GetAxis("Horizontal");
 
-        if (moveInput > 0)
+        // 1. BRAKE CHECK: This must come first to override acceleration
+        if (Input.GetKey(KeyCode.Space))
         {
-            currentSpeed += moveInput * acceleration * Time.deltaTime;
+            // Forcefully move speed to 0. Use a high 'brakeForce' in Inspector (e.g., 100)
+            currentSpeed = Mathf.MoveTowards(currentSpeed, 0, brakeForce * Time.deltaTime);
         }
-        else if (moveInput < 0)
+        // 2. ACCELERATION: Only runs if you ARE NOT braking
+        else if (Mathf.Abs(moveInput) > 0.1f)
         {
-            currentSpeed += moveInput * (acceleration / 2) * Time.deltaTime;
+            if (moveInput > 0)
+            {
+                currentSpeed += moveInput * acceleration * Time.deltaTime;
+            }
+            else if (moveInput < 0)
+            {
+                // Reversing logic
+                currentSpeed += moveInput * (acceleration / 2) * Time.deltaTime;
+            }
         }
+        // 3. COASTING: Natural slow down when no keys are pressed
         else
         {
             currentSpeed = Mathf.Lerp(currentSpeed, 0, Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            currentSpeed = Mathf.MoveTowards(currentSpeed, 0, brakeForce * Time.deltaTime);
-        }
+        // 4. CLAMP SPEED: Keep within max speed limits
+        currentSpeed = Mathf.Clamp(currentSpeed, -maxSpeed / 4f, maxSpeed);
 
-        currentSpeed = Mathf.Clamp(currentSpeed, -maxSpeed / 4, maxSpeed);
+        // 5. APPLY MOVEMENT
         transform.Translate(Vector3.forward * (currentSpeed / 10f) * Time.deltaTime);
 
-        if (currentSpeed != 0)
+        // 6. STEERING: Only rotates if moving
+        if (Mathf.Abs(currentSpeed) > 0.1f)
         {
             float turnAmount = turnInput * steeringSpeed * Time.deltaTime * (Mathf.Abs(currentSpeed) / 50f);
             transform.Rotate(0, turnAmount, 0);
