@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement; // Required for changing scenes
 
 public class GameManager : MonoBehaviour
 {
@@ -57,6 +58,56 @@ public class GameManager : MonoBehaviour
 
         if (winPanel != null) winPanel.SetActive(false);
         if (losePanel != null) losePanel.SetActive(false);
+
+        if (timerText != null)
+        {
+            timerText.text = "" + currentTime.ToString("F2") + "s";
+            // Set the initial color based on mode
+            timerText.color = (selectedMode == GameMode.Race) ? Color.white : startColor;
+        }
+    }
+
+    public void PlayAgain()
+    {
+        // Reloads the current active scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ExitToHome()
+    {
+        // Loads your main menu scene. Ensure the name matches exactly
+        SceneManager.LoadScene("HomeMenu");
+    }
+
+    void FinishGame(bool won)
+    {
+        isGameActive = false;
+        isRacing = false;
+
+        // 1. Stop the Player's car movement
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            var controller = player.GetComponent<AdvancedCarController>();
+            if (controller != null) controller.enabled = false;
+        }
+
+        // 2. Stop all AI cars in the scene
+        AICarController[] ais = Object.FindObjectsByType<AICarController>(FindObjectsSortMode.None);
+        foreach (AICarController ai in ais)
+        {
+            ai.StopCar(); // Ensure you added the StopCar() function to AICarController
+        }
+
+        // 3. Show the appropriate UI panel
+        if (won)
+        {
+            if (winPanel != null) winPanel.SetActive(true);
+        }
+        else
+        {
+            if (losePanel != null) losePanel.SetActive(true);
+        }
     }
 
     void Update()
@@ -148,19 +199,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void FinishGame(bool won)
-    {
-        isGameActive = false;
-        isRacing = false;
-        //Time.timeScale = 0f; // Stop game
+   
 
-        if (won)
-        {
-            if (winPanel != null) winPanel.SetActive(true);
-        }
-        else
-        {
-            if (losePanel != null) losePanel.SetActive(true);
-        }
-    }
+   
 }
