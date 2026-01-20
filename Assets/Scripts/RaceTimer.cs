@@ -3,9 +3,9 @@ using TMPro;
 
 public class RaceTimer : MonoBehaviour
 {
-    public TextMeshProUGUI timerText;
+    public TMP_Text timerText; // same TMP_Text as countdown
     private float timeElapsed;
-    private bool isRunning = true;
+    private bool isRunning = false; // start paused
 
     void Update()
     {
@@ -20,11 +20,17 @@ public class RaceTimer : MonoBehaviour
         int minutes = Mathf.FloorToInt(time / 60f);
         int seconds = Mathf.FloorToInt(time % 60f);
 
-        timerText.text = $"{minutes:00}:{seconds:00}";
+        if (timerText != null)
+            timerText.text = $"{minutes:00}:{seconds:00}";
     }
 
     public void StopTimer()
     {
         isRunning = false;
+    }
+
+    public void StartTimer()
+    {
+        isRunning = true;
     }
 }
