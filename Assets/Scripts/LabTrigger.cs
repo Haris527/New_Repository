@@ -5,22 +5,22 @@ public enum TriggerType { StartLine, FinishLine }
 public class LapTrigger : MonoBehaviour
 {
     public TriggerType type;
+    private bool triggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Only trigger if the object hitting us is the Player car
+        if (triggered) return;
+        if (type != TriggerType.FinishLine) return;
+
         if (other.CompareTag("Player"))
         {
-            GameManager manager = FindFirstObjectByType<GameManager>();
-
-            if (type == TriggerType.StartLine)
-            {
-                manager.OnStartLineHit();
-            }
-            else if (type == TriggerType.FinishLine)
-            {
-                manager.OnFinishLineHit();
-            }
+            triggered = true;
+            RaceManager.instance.PlayerWon();
+        }
+        else if (other.CompareTag("AI"))
+        {
+            triggered = true;
+            RaceManager.instance.PlayerLost();
         }
     }
 }

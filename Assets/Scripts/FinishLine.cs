@@ -2,16 +2,24 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
+    private bool raceEnded = false;
+
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Triggered by: " + other.name);
+
+        if (raceEnded)
+            return;
+
         if (other.CompareTag("Player"))
         {
-            // Find the GameManager in the scene and tell it we hit the line
-            GameManager gm = FindFirstObjectByType<GameManager>();
-            if (gm != null)
-            {
-                gm.OnFinishLineHit();
-            }
+            raceEnded = true;
+            RaceManager.instance.PlayerWon();
+        }
+        else if (other.CompareTag("AI"))
+        {
+            raceEnded = true;
+            RaceManager.instance.PlayerLost();
         }
     }
 }

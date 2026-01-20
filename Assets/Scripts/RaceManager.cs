@@ -2,65 +2,64 @@ using UnityEngine;
 
 public class RaceManager : MonoBehaviour
 {
+    // Singleton instance
     public static RaceManager instance;
 
-    // Reference the whole screens, not just TMP_Text
+    [Header("UI Screens")]
     public GameObject winScreen;
     public GameObject loseScreen;
-    
-  
 
-    void Awake()
+    private bool raceEnded = false;
+
+    private void Awake()
     {
+        // Setup singleton
         if (instance == null)
+        {
             instance = this;
+        }
         else
         {
             Destroy(gameObject);
-            return;
         }
-
-        // Make sure the screens are off at start
-        if (winScreen != null)
-            winScreen.SetActive(false);
-        if (loseScreen != null)
-            loseScreen.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
-        // For testing
+        // Debug: Press T to simulate win
         if (Input.GetKeyDown(KeyCode.T))
         {
             PlayerWon();
         }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            AIWon();
-        }
     }
 
+    // Call this when player crosses finish line
     public void PlayerWon()
     {
-        Debug.Log("PLAYER WON");
+        if (raceEnded) return;
+
+        raceEnded = true;
+        Debug.Log("Player Won!");
         if (winScreen != null)
             winScreen.SetActive(true);
-
-        EndRace();
     }
 
-    public void AIWon()
+    // Call this if AI wins or player loses
+    public void PlayerLost()
     {
-        Debug.Log("AI WON");
+        if (raceEnded) return;
+
+        raceEnded = true;
+        Debug.Log("Player Lost!");
         if (loseScreen != null)
             loseScreen.SetActive(true);
-
-        EndRace();
     }
 
-    void EndRace()
+    // Optional: Reset race
+    public void ResetRace()
     {
-        // Stop the game
-        Time.timeScale = 0f;
+        raceEnded = false;
+        if (winScreen != null) winScreen.SetActive(false);
+        if (loseScreen != null) loseScreen.SetActive(false);
     }
 }
