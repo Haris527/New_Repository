@@ -9,6 +9,9 @@ public class RaceManager : MonoBehaviour
     public GameObject winScreen;
     public GameObject loseScreen;
 
+    [Header("Timer")]
+    public RaceTimer raceTimer;   // ✅ ADDED
+
     private bool raceEnded = false;
 
     private void Awake()
@@ -39,6 +42,10 @@ public class RaceManager : MonoBehaviour
         if (raceEnded) return;
 
         raceEnded = true;
+
+        if (raceTimer != null)
+            raceTimer.StopTimer();   // ✅ ADDED
+
         Debug.Log("Player Won!");
         if (winScreen != null)
             winScreen.SetActive(true);
@@ -50,6 +57,10 @@ public class RaceManager : MonoBehaviour
         if (raceEnded) return;
 
         raceEnded = true;
+
+        if (raceTimer != null)
+            raceTimer.StopTimer();   // ✅ ADDED
+
         Debug.Log("Player Lost!");
         if (loseScreen != null)
             loseScreen.SetActive(true);
