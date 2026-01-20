@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     public void ExitToHome()
     {
         // Loads your main menu scene. Ensure the name matches exactly
-        SceneManager.LoadScene("HomeMenu");
+        SceneManager.LoadScene("UI");
     }
 
     void FinishGame(bool won)
