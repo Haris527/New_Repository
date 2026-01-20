@@ -41,4 +41,10 @@ public class AICarController : MonoBehaviour
                 currentWaypoint = 0; // Loop race
         }
     }
+
+    public void StopCar()
+    {
+        speed = 0;
+        this.enabled = false;
+    }
 }
