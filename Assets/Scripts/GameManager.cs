@@ -12,81 +12,155 @@ public class GameManager : MonoBehaviour
 
     [Header("UI References")]
     public TextMeshProUGUI statusText;
-    public GameObject resultPanel; // A UI panel that pops up at the end
+    public TextMeshProUGUI timerText;
+    public GameObject winPanel;
+    public GameObject losePanel;
 
+    [Header("Game Settings")]
+    public float zoneModeTimeLimit = 45f; // Set to 45 in Inspector
+
+    [Header("Game State")]
     private int zonesCollected = 0;
     private int totalZones;
-    private float timer = 0f;
-    private bool isGameActive = true;
-    [Header("Race Logic")]
-    private float raceTimer = 0f;
+    private float currentTime; // Used for both counting up (Race) and down (Zone)
     private bool isRacing = false;
-    public TextMeshProUGUI timerText;
+    private bool allZonesCollected = false;
+    private bool isGameActive = true;
+
+    [Header("UI Feedback")]
+    public Color startColor = Color.green;
+    public Color warningColor = Color.yellow;
+    public Color dangerColor = Color.red;
 
     void Start()
     {
-        // Count how many zones you placed inside the container automatically
+        // Count zones automatically
         totalZones = zoneHitContainer.GetComponentsInChildren<ZoneTrigger>(true).Length;
 
-        if (selectedMode == GameMode.Race)
+        string savedMode = PlayerPrefs.GetString("ActiveMode", "Race");
+
+        if (savedMode == "Race")
         {
+            selectedMode = GameMode.Race;
             raceContainer.SetActive(true);
             zoneHitContainer.SetActive(false);
+            currentTime = 0f; // Race starts at 0
         }
         else
         {
+            selectedMode = GameMode.ZoneHit;
             raceContainer.SetActive(false);
             zoneHitContainer.SetActive(true);
+            currentTime = zoneModeTimeLimit; // Zone starts at 45
+            UpdateZoneUI();
         }
+
+        if (winPanel != null) winPanel.SetActive(false);
+        if (losePanel != null) losePanel.SetActive(false);
     }
 
     void Update()
     {
-        if (isGameActive && selectedMode == GameMode.ZoneHit)
+        if (!isGameActive || !isRacing) return;
+
+        if (selectedMode == GameMode.Race)
         {
-            timer += Time.deltaTime;
-            statusText.text = $"Zones: {zonesCollected}/{totalZones}\nTime: {timer:F2}s";
+            currentTime += Time.deltaTime;
+            timerText.color = Color.white; // Default color for Race mode
         }
-        if (isRacing)
+        else
         {
-            raceTimer += Time.deltaTime;
-            if (timerText != null) timerText.text = "Time: " + raceTimer.ToString("F2") + "s";
+            currentTime -= Time.deltaTime;
+
+            // --- COLOR LOGIC ---
+            if (currentTime > 20)
+            {
+                timerText.color = startColor;
+            }
+            else if (currentTime <= 20 && currentTime > 10)
+            {
+                timerText.color = warningColor;
+            }
+            else if (currentTime <= 10)
+            {
+                timerText.color = dangerColor;
+
+                // --- BLINK LOGIC (Every 1 second) ---
+                // We use Sine wave or Floor to toggle visibility
+                bool isBlinkVisible = Mathf.FloorToInt(currentTime * 2) % 2 == 0;
+                timerText.enabled = isBlinkVisible;
+            }
+
+            // FAIL condition: Time runs out
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+                timerText.enabled = true; // Ensure text is visible when failing
+                FinishGame(false);
+            }
         }
+
+        if (timerText != null)
+            timerText.text = "" + currentTime.ToString("F2") + "s";
     }
 
     public void OnZoneHit()
     {
+        if (selectedMode != GameMode.ZoneHit) return;
+
         zonesCollected++;
+        UpdateZoneUI();
+
         if (zonesCollected >= totalZones)
         {
-            FinishGame();
+            allZonesCollected = true;
+            if (statusText != null) statusText.text = "";
         }
     }
 
-    void FinishGame()
+    void UpdateZoneUI()
     {
-        isGameActive = false;
-        Debug.Log($"Finished! Total Time: {timer:F2}s");
-        if (resultPanel != null) resultPanel.SetActive(true);
-        // You can add logic here to show "S Rank" if timer < 60, etc.
+        if (statusText != null) statusText.text = $"Zones: {zonesCollected}/{totalZones}";
     }
+
     public void OnStartLineHit()
     {
-        if (!isRacing)
-        {
-            Debug.Log("Race Started!");
-            raceTimer = 0f;
-            isRacing = true;
-        }
+        if (!isRacing) isRacing = true;
     }
 
     public void OnFinishLineHit()
     {
-        if (isRacing)
+        if (selectedMode == GameMode.ZoneHit)
         {
-            isRacing = false;
-            Debug.Log("Race Finished! Final Time: " + raceTimer.ToString("F2"));
-            // Show your result panel here!
+            // Win only if zones are done and time is left
+            if (allZonesCollected && currentTime > 0)
+            {
+                FinishGame(true);
+            }
+            else
+            {
+                FinishGame(false);
+            }
+        }
+        else
+        {
+            FinishGame(true);
+        }
+    }
+
+    void FinishGame(bool won)
+    {
+        isGameActive = false;
+        isRacing = false;
+        //Time.timeScale = 0f; // Stop game
+
+        if (won)
+        {
+            if (winPanel != null) winPanel.SetActive(true);
+        }
+        else
+        {
+            if (losePanel != null) losePanel.SetActive(true);
         }
     }
 }

@@ -7,6 +7,8 @@ public class RaceManager : MonoBehaviour
     // Reference the whole screens, not just TMP_Text
     public GameObject winScreen;
     public GameObject loseScreen;
+    
+  
 
     void Awake()
     {
